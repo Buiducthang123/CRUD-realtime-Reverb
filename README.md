@@ -8,7 +8,7 @@
 </p>
 
 
-# Hướng dẫn xây dựng chức năng CRUD realtime với Laravel Reverb (version 11)
+# Hướng dẫn xây dựng chức năng CRUD realtime với Laravel Reverb (version 11) 
 
 Laravel 11 được phát hành vào tháng 3/2024 cùng với đó là công cụ mới Laravel Reverb.
 
