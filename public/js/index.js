@@ -39,12 +39,9 @@ $(document).ready(function () {
                             <p>Content: ${post.content}</p>
                             <p>Created At: ${post.created_at}</p>
                             <p>Updated At: ${post.updated_at}</p>
-
-
                             <button type="button" class="delete-item" data-id="${post.id}">Xóa</button>
                         </div>
                     `;
-
                 });
                 $('#postsContainer').html(postHTML);
                 // Hiển thị dữ liệu lấy được từ server trong giao diện người dùng

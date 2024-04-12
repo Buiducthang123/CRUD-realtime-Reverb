@@ -679,12 +679,9 @@ $(document).ready(function () {
                             <p>Content: ${post.content}</p>
                             <p>Created At: ${post.created_at}</p>
                             <p>Updated At: ${post.updated_at}</p>
-
-
                             <button type="button" class="delete-item" data-id="${post.id}">Xóa</button>
                         </div>
                     `;
-
                 });
                 $('#postsContainer').html(postHTML);
                 // Hiển thị dữ liệu lấy được từ server trong giao diện người dùng
@@ -698,9 +695,10 @@ $(document).ready(function () {
     }
 
     getData(`${rootUrl}/posts`);
-    const webSocketChannel = "thang-dz";
+    const webSocketChannel1 = "thang-chua-co-ny-create";
+    const webSocketChannel2 = "thang-chua-co-ny-delete";
     const connectWebSocket = () => {
-        window.Echo.private(webSocketChannel).listen(
+        window.Echo.private(webSocketChannel1).listen(
             "CreatePost",
             async (e) => {
                 // Khi nhận được sự kiện CreatePost từ WebSocket, gọi lại hàm getData
@@ -708,7 +706,7 @@ $(document).ready(function () {
             }
         );
 
-        window.Echo.private('delete-post').listen(
+        window.Echo.private(webSocketChannel2).listen(
             "DeletePost",
             async (e) => {
                 // Khi nhận được sự kiện DeletePost từ WebSocket, gọi hàm handleDeletePost để xử lý việc xóa bài viết
@@ -745,6 +743,7 @@ $(document).ready(function () {
         deletePost(id);
     })
 });
+
 ```
 #### Giải thích 1 chút về file js:
 - getData là hàm get sử dụng ajax jquery để lấy dữ liệu từ hàm index trong PostController
